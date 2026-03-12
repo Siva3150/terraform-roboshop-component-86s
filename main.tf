@@ -37,7 +37,7 @@ resource "terraform_data" "main" {
     inline = [ 
         "chmod +x /tmp/bootstrap.sh",
         #"sudo sh /tmp/catalogue.sh"
-         "sudo sh /tmp/catalogue.sh ${var.component} ${var.environment}"
+         "sudo sh /tmp/bootstrap.sh.sh ${var.component} ${var.environment}"
      ]
     
   }
