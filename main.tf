@@ -72,7 +72,7 @@ resource "aws_ami_from_instance" "main" {
 #Target group
 resource "aws_lb_target_group" "main" {
   name     = "${local.common_name_suffix}-${var.component}" #roboshop-dev-catalogue
-  port     = 8080
+  port     = local.tg_port   # if frontend port is 80, otherwise port is 8080
   protocol = "HTTP"
   vpc_id   = local.vpc_id
   deregistration_delay = 60 # waiting period before deleting the instance
